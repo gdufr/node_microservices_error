@@ -1,0 +1,23 @@
+{
+  "name": "error",
+  "version": "1.0.0",
+  "description": "This is configuration wrapper library that handles errors",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "reinstall": "for i in $(echo application-configuration cache data-access logging security services); do rm -rf node_modules/$i ; done && npm install",
+    "linklibs": "workingDirectory=\"$(pwd)\" && for libraryName in $(echo application-configuration cache data-access error logging security services); do rm -rf $workingDirectory/node_modules/$libraryName && ln -s $workingDirectory/../$libraryName node_modules/$libraryName ; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://innersource.accenture.com/projects/NMI/repos/error"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "application-configuration": "git+ssh://git@innersource.accenture.com/nmi/application-configuration.git",
+    "cache": "git+ssh://git@innersource.accenture.com/nmi/cache.git",
+    "logging": "git+ssh://git@innersource.accenture.com/nmi/logging.git"
+  }
+}
